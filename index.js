@@ -29,7 +29,7 @@ app.use(
     standardHeaders: 'draft-7',
     legacyHeaders: false,
     keyGenerator: (req) => req.header('do-connecting-ip') || req.socket.remoteAddress,
-    handler: (req, res, next, options) => res.status(options.statusCode).setHeader('Content-Type: text/plain').send(options.message),
+    handler: (req, res, next, options) => res.status(options.statusCode).type('text/plain').send(options.message),
   }),
 );
 
