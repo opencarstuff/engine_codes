@@ -1,0 +1,52 @@
+<%-contentFor('header')%>
+<p><button id="connectBtn" class="primary">Connect</button><br>
+<span id="status" class="status offline" hidden>Offline</span></p>
+<%-contentFor('body')%>
+<main>
+  <section class="landing">
+    <p>
+      “I was <em>this</em> close to dropping <%= scannerPrice %> on a chunky scan tool. Then I found <%= domain %>.”
+    </p>
+    <p>
+      We turn any phone and a <%= donglePrice %> Bluetooth dongle into a real scan tool,
+      letting you read diagnostic trouble codes for free, forever.
+      You can decide later if pricier gear is worth it.
+    </p>
+    <h2>How it works</h2>
+    <ol>
+      <li>Plug the BLE OBD‑II dongle into your car</li>
+      <li>Tap <em>Connect</em> and give Bluetooth permission</li>
+      <li>Read engine codes in plain English</li>
+    </ol>
+    <p><%= brand %> uses the Web Bluetooth API.
+    It works on most Android and iOS devices and computers.</p>
+    <p id="ios-ble-support" hidden>On iOS, use <a href="https://apps.apple.com/us/app/bluefy-web-ble-browser/id1492822055">Bluefy – Web BLE Browser</a>
+    to use this site.</p>
+  </section>
+  <section class="landing">
+    <h2>Buying guide</h2>
+    <ul>
+      <li>Look for “ELM327 BLE” adapters</li>
+      <li>Cost: about <%= donglePrice %> online</li>
+      <li>Avoid Wi‑Fi and Bluetooth Classic models; BLE gives instant phone pairing.</li>
+    </ul>
+  </section>
+  <section id="vehicle" hidden>
+    <h2>Vehicle</h2>
+    <p>VIN: <span id="vin">–</span> · <span id="make">–</span> <span id="year"></span></p>
+  </section>
+  <section id="codes" hidden>
+    <h2>Codes</h2>
+    <ul id="codeList"></ul>
+    <p id="noCodes" hidden>Congratulations, the scan didn't show any trouble codes.</p>
+  </section>
+  <section id="pendingCodes" hidden>
+    <h2>Pending codes</h2>
+    <ul id="pendingCodeList"></ul>
+    <p id="noPendingCodes" hidden>The scan didn't show any pending trouble codes.</p>
+  </section>
+  <section class="landing">
+    <h2>Contact</h2>
+    <p>Slide into our X-files at <a href="https://x.com/enginedotcodes">@enginedotcodes</a></p>
+  </section>
+</main>

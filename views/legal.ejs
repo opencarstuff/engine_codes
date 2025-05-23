@@ -1,0 +1,66 @@
+<%-contentFor('header')%>
+<p>Last updated 11 May 2025</p>
+<%-contentFor('body')%>
+<main>
+  <h2>Who we are</h2>
+  <p><strong><%= brand %></strong> is a free, browser-based OBD-II scanner operated by a sole proprietor in the United Kingdom.  
+  Contact privacy @ <%= domain %></p>
+
+  <h2>What data we collect for basic diagnostic:</h2>
+  <ul>
+    <li><strong>VIN</strong> (hash only)</li>
+    <li><strong>Fault codes (DTCs)</strong> + <strong>time stamp</strong> to improve code coverage & analytics.</li>
+    <li><strong>Region</strong> (country/state) derived from IP for aggregate stats.</li>
+  </ul>
+  <p>Nothing else is stored (no cookies, advertising IDs, location, other PII)</p>
+
+  <h2>Data retention</h2>
+  <ul>
+    <li>Raw IPs & server logs: <strong>24 hours</strong> then deleted.</li>
+    <li>Hashed VIN + DTC counts: <strong>12 months</strong> for trend analysis.</li>
+    <li>Feedback text: until resolved or 12 months, whichever is sooner.</li>
+  </ul>
+
+  <h2>Your rights</h2>
+  <p>Under GDPR / CCPA you may request access, correction, or deletion of any data linked to your VIN hash.
+  Write to privacy @ <%= domain %> with the hash shown in the app footer.</p>
+
+  <h2>Cookies & analytics</h2>
+  <p>No cookies are set by this site if you don't consent to data sharing with OEMs.</p>
+
+  <h2>Accessibility statement</h2>
+  <p>We aim for <strong>WCAG 2.1&nbsp;AA</strong>.  
+  If you encounter a barrier, email access @ <%= domain %> – we respond within 5 business days.</p>
+
+  <h2>Children</h2>
+  <p>
+  This service is <strong>not intended for users under&nbsp;16&nbsp;years of age</strong>.
+  We do not knowingly collect or store any information from children under&nbsp;16.
+  If you are a parent or guardian and believe a minor has submitted data,
+  please email privacy @ <%= domain %>
+  and we will delete it immediately.
+  </p>
+
+  <h2>Disclaimer</h2>
+  <p>The scanner and AI explanations are <strong>informational only</strong>.  
+  Always verify diagnostics and repairs with a qualified technician.  
+  We accept no liability for damage arising from the use or misuse of this site.</p>
+
+  <!-- <h2>Affiliate disclosure</h2>
+  <p>Links marked “affiliate” may earn us a small commission on qualifying purchases. This never affects which products we recommend.</p> -->
+
+  <h2>Export & sanctions compliance</h2>
+  <p>Service is unavailable in some regions.</p>
+
+  <h2>Who processes the data?</h2>
+  <p>We use a small number of specialised processors:</p>
+  <ul>
+    <li>Cloud hosting & CDN (UK)</li>
+    <li>Error- and access-log provider (EU)</li>
+    <li>Email & support ticket service (EU)</li>
+  </ul>
+  <p>All vendors are GDPR-compliant and bound by DPAs.</p>
+
+  <h2>Open-source licences</h2>
+  <p>Frontend code is MIT-licensed; third-party libraries retain their original licences.</p>
+</main>

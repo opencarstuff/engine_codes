@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title><%= brand %> – Free Browser OBD‑II Scanner</title>
+  <style><%- css %></style>
+</head>
+<body>
+  <header>
+    <h1><a href="/"><%= title %></a></h1>
+    <p>Scan your car with nothing but a phone and a <%= donglePrice %> Bluetooth adapter</p>
+    <%-defineContent('header')%>
+  </header>
+  <%- body %><% if (typeof js !== 'undefined') { %><script><%- js %></script><% } %>
+  <footer>
+    <small>
+      © 2025 <%= brand %> • <a href="/">Home</a> • <a href="/legal">Legal & Privacy</a><br>
+      AI explanations may be inaccurate. Verify repairs with a technician.
+    </small>
+  </footer>
+</body>
+</html>
