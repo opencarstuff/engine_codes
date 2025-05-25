@@ -86,7 +86,7 @@ const elmInit = async () => {
 
 const readVIN = async () => {
   await send('09 02');
-  const frames = await waitLine(l => /(49 02|UNABLE TO CONNECT)/i.test(l));
+  const frames = await waitLine(l => /(49 02|UNABLE TO CONNECT|NO DATA)/i.test(l));
   if (!frames.find(l => l.match(/49 02/i))) {
     throw new Error('Can\'t connect to car. Check connection or start engine')
   }
