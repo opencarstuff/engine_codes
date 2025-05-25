@@ -145,19 +145,22 @@ function render(template, options = {}) {
         `script-src 'none'; object-src 'none'; base-uri 'none';`,
       );
     }
-    return res.render(
-      template,
-      {
-        brand: brand,
-        css: css(),
-        domain: 'engine.codes',
-        donglePrice: getDonglePrice(req),
-        ...finalJs && { js: finalJs },
-        scannerPrice: getDonglePrice(req, 300),
-        ...!options.title && { title: brand },
-        ...options,
-      },
-    );
+    return res
+      .setHeader('Cross-Origin-Embedder-Policy', 'require-corp')
+      .setHeader('Cross-Origin-Opener-Policy', 'same-origin')
+      .render(
+        template,
+        {
+          brand: brand,
+          css: css(),
+          domain: 'engine.codes',
+          donglePrice: getDonglePrice(req),
+          ...finalJs && { js: finalJs },
+          scannerPrice: getDonglePrice(req, 300),
+          ...!options.title && { title: brand },
+          ...options,
+        },
+      );
   };
 }
 
