@@ -30,7 +30,6 @@ const setStatus = (txt, cls, cmd) => {
 };
 
 const YEARMAP = 'ABCDEFGHJKLMNPRSTVWXY123456789';
-const wmiToMake = w => WMI[w] || 'Unknown';
 const decodeYear = ch => {
   const i = YEARMAP.indexOf(ch.toUpperCase());
   if (i === -1) return '–';
