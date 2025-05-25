@@ -148,6 +148,7 @@ function render(template, options = {}) {
     return res
       .setHeader('Cross-Origin-Embedder-Policy', 'require-corp')
       .setHeader('Cross-Origin-Opener-Policy', 'same-origin')
+      .setHeader('X-Frame-Options', 'DENY')
       .render(
         template,
         {
