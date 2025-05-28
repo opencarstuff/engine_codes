@@ -98,6 +98,7 @@ main .secondary {
   font-size:.85rem;
   font-weight:600;
   padding:.25rem .65rem;
+  margin-top: .65rem;
   border-radius:999px;
   vertical-align:middle;
 }
