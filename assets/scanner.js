@@ -112,7 +112,7 @@ const readDTCs = async (cmd = '03') => {
   const codes = [];
   for (let i=0;i<bytes.length;i+=2)
     if (bytes[i] || bytes[i+1]) codes.push(bytesToDTC(bytes[i], bytes[i+1]));
-  return codes;
+  return { codes, raw: line };
 };
 
 const displayDTCs = (sectionId, listId, noCodesId, codes) => {
@@ -191,10 +191,10 @@ connectBtn.onclick = async () => {
     setStatus('Reading trouble codes…', 'pending');
     const dtc = await readDTCs('03');
     log('dtc_read', { dtc });
-    displayDTCs('codes', 'codeList', 'noCodes', dtc);
+    displayDTCs('codes', 'codeList', 'noCodes', dtc.codes);
     const pendingDtc = await readDTCs('07');
     log('pending_dtc_read', { pendingDtc });
-    displayDTCs('pendingCodes', 'pendingCodeList', 'noPendingCodes', pendingDtc);
+    displayDTCs('pendingCodes', 'pendingCodeList', 'noPendingCodes', pendingDtc.codes);
 
     setStatus('Online', 'offline');
     sendLog('success');
